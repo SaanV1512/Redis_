@@ -1,8 +1,8 @@
-# ConcurrentKV
+# MemDB
 
 > A concurrent in-memory key-value database built from scratch in C using TCP sockets, POSIX threads, and custom hash tables.
 
-ConcurrentKV is a lightweight key-value database designed to explore systems programming concepts including socket programming, multithreading, synchronization, persistence, and in-memory data structures. Inspired by the architecture of modern in-memory databases such as Redis, the project focuses on understanding how network servers process requests, manage shared state, and provide fast key-value operations.
+MemDB is a lightweight key-value database designed to explore systems programming concepts including socket programming, multithreading, synchronization, persistence, and in-memory data structures. Inspired by the architecture of modern in-memory databases such as Redis, the project focuses on understanding how network servers process requests, manage shared state, and provide fast key-value operations.
 
 ---
 
@@ -46,7 +46,7 @@ ConcurrentKV is a lightweight key-value database designed to explore systems pro
                         TCP Socket
                             |
                  +----------v-----------+
-                 |   ConcurrentKV       |
+                 |      MemDB       |
                  |      Server          |
                  +----------+-----------+
                             |
