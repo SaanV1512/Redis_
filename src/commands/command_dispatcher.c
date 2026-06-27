@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
+#include <unistd.h>
 
 static char *make_response(const char *text) {
     if (!text) {
@@ -87,10 +88,14 @@ char *commands_handle(const char *input) {
     } else if (strcasecmp(command, "SET") == 0) {
         if (argc < 3) {
             response = make_response("ERR wrong number of arguments for 'SET'");
-        } else if (database_set(argv[1], argv[2])) {
-            response = make_response("OK");
-        } else {
-            response = make_response("ERR failed to set key");
+        } else{
+            sleep(10);
+            if (database_set(argv[1], argv[2])) {
+                response = make_response("OK");
+            } 
+            else {
+                response = make_response("ERR failed to set key");
+            }
         }
     } else if (strcasecmp(command, "GET") == 0) {
         if (argc != 2) {
