@@ -76,13 +76,13 @@ make
 Start the server:
 
 ```bash
-./memdb-server
+./memdb-clone
 ```
 
 In another terminal, launch the client:
 
 ```bash
-./memdb-cli
+./memdb-client
 ```
 
 ## Example

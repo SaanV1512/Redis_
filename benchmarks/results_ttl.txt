@@ -1,0 +1,7 @@
+TTL benchmark
+host=127.0.0.1
+port=6379
+ttl_seconds=2
+initial_ttl=2
+expired_ttl=-2
+exists_after_expiry=nil

@@ -74,12 +74,7 @@ char *commands_handle(const char *input) {
         utils_free_words(argv, argc);
         return make_response("ERR empty command");
     }
-    printf("argc = %zu\n", argc);
-    for(size_t i=0;i<argc;i++)
-    {
-        printf("[%s]\n", argv[i]);
-    }
-    
+
     char *command = argv[0];
     char *response = NULL;
 
@@ -89,7 +84,6 @@ char *commands_handle(const char *input) {
         if (argc < 3) {
             response = make_response("ERR wrong number of arguments for 'SET'");
         } else{
-            sleep(10);
             if (database_set(argv[1], argv[2])) {
                 response = make_response("OK");
             } 

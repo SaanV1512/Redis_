@@ -14,11 +14,16 @@ static void handle_signal(int signum) {
 }
 
 int main(int argc, char *argv[]) {
-    (void)argc;
-    (void)argv;
-
     const char *filename = "dump.rdb";
     unsigned short port = 6379;
+
+    if (argc > 1) {
+        char *end = NULL;
+        unsigned long parsed = strtoul(argv[1], &end, 10);
+        if (end != argv[1] && *end == '\0' && parsed > 0 && parsed <= 65535) {
+            port = (unsigned short)parsed;
+        }
+    }
 
     if (!database_init(filename)) {
         fprintf(stderr, "Failed to initialize database from %s\n", filename);

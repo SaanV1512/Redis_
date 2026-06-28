@@ -5,8 +5,8 @@ CLIENT_SRC = src/client.c
 SERVER_OBJ = $(SERVER_SRC:.c=.o)
 CLIENT_OBJ = $(CLIENT_SRC:.c=.o)
 
-TARGET = redis-clone
-CLIENT = redis-client
+TARGET = memdb-clone
+CLIENT = memdb-client
 
 .PHONY: all clean test
 all: $(TARGET) $(CLIENT)
